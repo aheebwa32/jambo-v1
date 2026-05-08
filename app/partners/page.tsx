@@ -55,7 +55,7 @@ export default function PartnersPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 72 }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px 88px" }}>
+        <div className="page-container" style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px 88px" }}>
 
           {/* Héro */}
           <header style={{ textAlign: "center", marginBottom: 64 }}>
@@ -81,9 +81,9 @@ export default function PartnersPage() {
             </div>
 
             {/* Logos partenaires principaux */}
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+            <div className="mobile-wrap" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
               <div style={{ ...PANEL, padding: "18px 26px" }}>
-                <Image src="/images/city-taxi.png" alt="CityTaxi" width={140} height={44} style={{ objectFit: "contain", backgroundColor: "transparent" }} />
+                <Image src="/images/city-taxi.png" alt="CityTaxi" width={140} height={44} style={{ objectFit: "contain", backgroundColor: "transparent", width: "auto", height: "auto" }} />
               </div>
               <div style={{ color: "#bccbb9", fontSize: 26, fontWeight: 300 }}>×</div>
               <div style={{ ...PANEL, padding: "18px 26px" }}>
@@ -93,13 +93,13 @@ export default function PartnersPage() {
           </header>
 
           {/* Cartes partenaires */}
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", gap: 14, marginBottom: 14 }}>
+          <div className="partner-feature-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", gap: 14, marginBottom: 14 }}>
             {PARTNERS.slice(0, 3).map((partner) => (
               <article key={partner.title} style={{ ...PANEL, overflow: "hidden", display: "flex", flexDirection: partner.featured ? "row" : "column", minHeight: partner.featured ? 320 : 290 }}>
                 {partner.featured ? (
                   <>
                     <div style={{ position: "relative", minHeight: 320, flex: 1 }}>
-                      <Image src={partner.image!} alt={partner.imageAlt!} fill style={{ objectFit: "cover" }} />
+                      <Image src={partner.image!} alt={partner.imageAlt!} fill sizes="(max-width: 768px) 100vw, 40vw" style={{ objectFit: "cover" }} />
                     </div>
                     <div style={{ padding: 32, flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                       <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 10px", borderRadius: 9999, backgroundColor: "rgba(75,226,119,0.12)", color: "#4be277", fontSize: 11, fontWeight: 700, marginBottom: 14, textTransform: "uppercase", letterSpacing: "0.08em" }}>
@@ -135,9 +135,9 @@ export default function PartnersPage() {
             ))}
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 72 }}>
+          <div className="three-col-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 72 }}>
             <article style={{ ...PANEL, overflow: "hidden", position: "relative", minHeight: 280 }}>
-              <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill style={{ objectFit: "cover" }} />
+              <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.92) 0%, transparent 58%)" }} />
               <div style={{ position: "absolute", bottom: 18, left: 18 }}>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "3px 8px", borderRadius: 9999, backgroundColor: "rgba(75,226,119,0.22)", color: "#4be277", fontSize: 11, fontWeight: 700, marginBottom: 8 }}>
@@ -163,7 +163,7 @@ export default function PartnersPage() {
             </article>
 
             <article style={{ ...PANEL, position: "relative", overflow: "hidden", minHeight: 280 }}>
-              <Image src="/images/vehicules.jpg" alt="Salle de travail et innovation" fill style={{ objectFit: "cover", filter: "saturate(0.9) brightness(0.6)" }} />
+              <Image src="/images/vehicules.jpg" alt="Salle de travail et innovation" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", filter: "saturate(0.9) brightness(0.6)" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(12,16,18,0.95) 0%, rgba(12,16,18,0.35) 45%, transparent 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ width: 44, height: 44, borderRadius: 10, backgroundColor: "rgba(39,42,44,0.9)", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -186,7 +186,7 @@ export default function PartnersPage() {
           <div style={{ textAlign: "center", marginBottom: 72, padding: "24px 0" }}>
             <h2 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, color: "#e0e3e5" }}>L&apos;impact en chiffres</h2>
             <p style={{ fontSize: 16, color: "#bccbb9", marginBottom: 40 }}>Des résultats concrets pour la mobilité de Conakry.</p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
+            <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
               {STATS.map((s) => (
                 <div key={s.value} style={{ ...G, padding: 22, textAlign: "center" }}>
                   <div style={{ fontSize: 34, fontWeight: 800, color: "#4be277", marginBottom: 6 }}>{s.value}</div>
@@ -200,9 +200,9 @@ export default function PartnersPage() {
           <section style={{ marginBottom: 80 }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, textAlign: "center", marginBottom: 8, color: "#e0e3e5" }}>La flotte en mouvement</h2>
             <p style={{ fontSize: 16, color: "#bccbb9", textAlign: "center", marginBottom: 40 }}>Des véhicules de précision prêts pour les rues animées de Conakry.</p>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            <div className="feature-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               <div style={{ borderRadius: 12, overflow: "hidden", position: "relative", gridRow: "span 2", minHeight: 480 }}>
-                <Image src="/images/vehicules.jpg" alt="Flotte CityTaxi" fill style={{ objectFit: "cover" }} />
+                <Image src="/images/vehicules.jpg" alt="Flotte CityTaxi" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: "cover" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.8) 0%, transparent 60%)" }} />
                 <div style={{ position: "absolute", bottom: 20, left: 20 }}>
                   <div style={{ fontSize: 15, fontWeight: 700, color: "#4be277", marginBottom: 4 }}>CityTaxi — Suzuki Swift & Ertiga</div>
@@ -210,7 +210,7 @@ export default function PartnersPage() {
                 </div>
               </div>
               <div style={{ borderRadius: 12, overflow: "hidden", position: "relative", height: 230 }}>
-                <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill style={{ objectFit: "cover" }} />
+                <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: "cover" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.8) 0%, transparent 60%)" }} />
                 <div style={{ position: "absolute", bottom: 16, left: 16 }}>
                   <span style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 8px", borderRadius: 9999, backgroundColor: "rgba(75,226,119,0.2)", color: "#4be277", fontSize: 11, fontWeight: 600, marginBottom: 4 }}>
@@ -221,7 +221,7 @@ export default function PartnersPage() {
               </div>
               <div style={{ ...G, borderRadius: 12, padding: 24, display: "flex", alignItems: "center", justifyContent: "center", height: 230 }}>
                 <div style={{ textAlign: "center" }}>
-                  <Image src="/images/city-taxi.png" alt="CityTaxi" width={140} height={50} style={{ objectFit: "contain", marginBottom: 12, backgroundColor: "transparent" }} />
+                  <Image src="/images/city-taxi.png" alt="CityTaxi" width={140} height={50} style={{ objectFit: "contain", marginBottom: 12, backgroundColor: "transparent", width: "auto", height: "auto" }} />
                   <p style={{ fontSize: 13, color: "#bccbb9", lineHeight: 1.5 }}>Où vous voulez, quand vous voulez.</p>
                 </div>
               </div>

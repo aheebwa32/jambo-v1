@@ -9,7 +9,7 @@ export default function ServicesPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 72 }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px 80px" }}>
+        <div className="page-container" style={{ maxWidth: 1280, margin: "0 auto", padding: "56px 24px 80px" }}>
 
           <header style={{ marginBottom: 56, textAlign: "center" }}>
             <h1 style={{ fontSize: 44, fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: 16, color: "#e0e3e5", maxWidth: 660, margin: "0 auto 16px" }}>
@@ -21,21 +21,21 @@ export default function ServicesPage() {
           </header>
 
           {/* Grille services */}
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 14, marginBottom: 14 }}>
+          <div className="services-top-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 14, marginBottom: 14 }}>
 
             {/* Service principal — CityTaxi */}
             <div style={{ ...G, position: "relative", overflow: "hidden", minHeight: 440, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div style={{ position: "absolute", inset: 0 }}>
-                <Image src="/images/vehicules.jpg" alt="Flotte CityTaxi" fill style={{ objectFit: "cover" }} />
+                <Image src="/images/vehicules.jpg" alt="Flotte CityTaxi" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.95) 0%, rgba(16,20,21,0.3) 60%, transparent 100%)" }} />
               </div>
               <div style={{ position: "relative", zIndex: 2, padding: 40 }}>
-                <Image src="/images/city-taxi.png" alt="CityTaxi" width={120} height={36} style={{ objectFit: "contain", marginBottom: 16 }} />
+                <Image src="/images/city-taxi.png" alt="CityTaxi" width={120} height={36} style={{ objectFit: "contain", marginBottom: 16, width: "auto", height: "auto" }} />
                 <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 12, color: "#fff" }}>Courses CityTaxi</h2>
                 <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.75)", maxWidth: 400, marginBottom: 24 }}>
                   Réservez un taxi confortable en quelques secondes. Suzuki Swift, Ertiga — pour 1 à 7 passagers. Suivi GPS en temps réel, chauffeurs vérifiés.
                 </p>
-                <div style={{ display: "flex", gap: 12 }}>
+                <div className="button-row" style={{ display: "flex", gap: 12 }}>
                   <button style={{ backgroundColor: "#4be277", color: "#003915", fontWeight: 700, fontSize: 14, padding: "12px 22px", borderRadius: 8, border: "none", cursor: "pointer" }}>Réserver maintenant</button>
                   <button style={{ backgroundColor: "transparent", color: "#e0e3e5", fontWeight: 600, fontSize: 14, padding: "12px 22px", borderRadius: 8, border: "1px solid rgba(255,255,255,0.25)", cursor: "pointer" }}>Voir les tarifs</button>
                 </div>
@@ -45,7 +45,7 @@ export default function ServicesPage() {
             {/* Véhicules électriques */}
             <div style={{ ...G, position: "relative", overflow: "hidden", minHeight: 440, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
               <div style={{ position: "absolute", inset: 0 }}>
-                <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill style={{ objectFit: "cover" }} />
+                <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.95) 0%, rgba(16,20,21,0.3) 60%, transparent 100%)" }} />
               </div>
               <div style={{ position: "relative", zIndex: 2, padding: 32 }}>
@@ -60,7 +60,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Rangée 2 - Services supplémentaires */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 40 }}>
+          <div className="services-mid-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 40 }}>
 
             {/* Épicerie et réductions */}
             <div style={{ ...G, position: "relative", overflow: "hidden", minHeight: 320, display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: 32 }}>
@@ -92,15 +92,15 @@ export default function ServicesPage() {
           </div>
 
           {/* Rangée 3 - Chauffeur et Jambo Pay */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 60 }}>
+          <div className="services-bottom-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 60 }}>
 
             {/* Devenir chauffeur */}
             <div style={{ ...G, padding: 36, borderLeft: "4px solid #4be277" }}>
-              <div style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
+              <div className="mobile-stack" style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
                 <div style={{ flex: 1 }}>
                   <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, color: "#e0e3e5" }}>Devenez chauffeur Jambo</h2>
                   <p style={{ fontSize: 14, lineHeight: 1.65, color: "#bccbb9", marginBottom: 20 }}>Rejoignez notre flotte de chauffeurs professionnels. Gérez vos horaires librement, suivez vos revenus en temps réel et bénéficiez d&apos;un support dédié.</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 24 }}>
+                  <div className="mobile-wrap" style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 24 }}>
                     {["Horaires flexibles", "Revenus transparents", "Support 24h/7j"].map((t) => (
                       <span key={t} style={{ padding: "3px 10px", borderRadius: 4, backgroundColor: "#1d2022", color: "#bccbb9", fontSize: 12 }}>{t}</span>
                     ))}
@@ -130,8 +130,8 @@ export default function ServicesPage() {
             <h2 style={{ fontSize: 30, fontWeight: 700, marginBottom: 16, color: "#e0e3e5" }}>Prêt à bouger avec Jambo&nbsp;?</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "#bccbb9", maxWidth: 500, margin: "0 auto 40px" }}>Téléchargez l&apos;application et rejoignez des milliers d&apos;utilisateurs qui réinventent la mobilité urbaine à Conakry.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 20, flexWrap: "wrap" }}>
-              <a href="#"><Image src="/images/app-store-fr.svg" alt="App Store" width={160} height={48} style={{ objectFit: "contain" }} /></a>
-              <a href="#"><Image src="/images/google-play-fr.png" alt="Google Play" width={180} height={54} style={{ objectFit: "contain" }} /></a>
+              <a href="#"><Image src="/images/app-store-fr.svg" alt="App Store" width={160} height={48} style={{ objectFit: "contain", width: "auto", height: "auto" }} /></a>
+              <a href="#"><Image src="/images/google-play-fr.png" alt="Google Play" width={180} height={54} style={{ objectFit: "contain", width: "auto", height: "auto" }} /></a>
             </div>
           </div>
         </div>

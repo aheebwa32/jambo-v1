@@ -53,3 +53,248 @@ input:focus, textarea:focus { border-color: rgba(75,226,119,0.6); }
 textarea { resize: vertical; }
 a { text-decoration: none; color: inherit; }
 img { display: block; }
+
+.nav-cta-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-cta-link::after {
+  content: "";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  .nav-shell {
+    height: auto !important;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+}
+
+/* Responsive main padding to prevent navbar overlap - ensures content below fixed navbar */
+main {
+  padding-top: 100px !important;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  main {
+    padding-top: 100px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 64px !important;
+  }
+
+  .nav-desktop-links,
+  .nav-cta-full {
+    display: none !important;
+  }
+
+  .nav-cta-link::after {
+    content: "";
+  }
+
+  .nav-burger,
+  .nav-cta-short {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-burger {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 6px;
+    border: 1px solid rgba(61,74,61,0.5);
+    background-color: transparent;
+    color: #e0e3e5;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-shell {
+    padding: 6px 10px !important;
+    height: auto !important;
+    min-height: 46px;
+    flex-wrap: nowrap;
+  }
+
+  .nav-right {
+    display: flex !important;
+    align-items: center;
+    gap: 6px !important;
+    margin-left: auto;
+  }
+
+  .nav-right > a {
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+    font-weight: 600;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .page-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 40px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .hero-shell {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 8.5vw, 3.2rem) !important;
+  }
+
+  .hero-copy {
+    font-size: 16px !important;
+    max-width: 100% !important;
+  }
+
+  .button-row {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+
+  .button-row > a,
+  .button-row > button {
+    flex: 1 1 calc(50% - 6px) !important;
+    min-width: 140px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-row img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 48px;
+  }
+
+  .stack-on-mobile,
+  .hero-split,
+  .feature-grid,
+  .values-grid,
+  .services-top-grid,
+  .services-mid-grid,
+  .services-bottom-grid,
+  .partner-feature-grid,
+  .three-col-grid,
+  .download-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .contact-name-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mobile-stack {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .mobile-wrap {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .nav-mobile-list {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-cta-link::after {
+    content: " l'app";
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding-top: 58px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  main {
+    padding-top: 54px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 10vw, 2.8rem) !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-container {
+    padding-top: 32px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .button-row > a,
+  .button-row > button {
+    flex: 1 1 100% !important;
+  }
+
+  .button-row img {
+    max-height: 40px;
+  }
+
+  .nav-shell {
+    padding: 4px 8px !important;
+    min-height: 42px;
+  }
+
+  .nav-right {
+    gap: 4px !important;
+  }
+
+  .nav-burger {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 5px;
+  }
+
+  .nav-right > a {
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+  }
+}

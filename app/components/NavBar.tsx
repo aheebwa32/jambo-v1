@@ -24,21 +24,21 @@ function NavBar() {
       backdropFilter: "blur(12px)",
       borderBottom: "1px solid rgba(61,74,61,0.3)",
     }}>
-      <div style={{
+      <div className="nav-shell" style={{
         maxWidth: 1280, margin: "0 auto", padding: "0 24px",
         height: 72,
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
 
         {/* Logo */}
-        <Link href="/" onClick={() => setOpen(false)} aria-label="Jambo — Accueil" className="inline-flex items-center">
+        <Link href="/" onClick={() => setOpen(false)} aria-label="Jambo — Accueil" className="inline-flex items-center flex-shrink-0">
           <Image
             src="/media/images/jambo-logo.png"
             alt="Jambo"
             width={160}
             height={160}
             priority
-            className="-my-5 h-20 w-20 md:-my-10 md:h-40 md:w-40"
+            className="h-10 w-auto md:h-12 md:w-auto"
           />
         </Link>
 
@@ -56,14 +56,13 @@ function NavBar() {
         </div>
 
         {/* Right side */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <Link href="/#download" style={{
+        <div className="nav-right" style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <Link href="/#download" aria-label="Télécharger l'application" className="nav-cta-link" style={{
             backgroundColor: "#22c55e", color: "#004b1e",
             fontWeight: 700, fontSize: 14, letterSpacing: "0.03em",
-            padding: "10px 20px", borderRadius: 8, whiteSpace: "nowrap",
+            padding: "8px 16px", borderRadius: 8, whiteSpace: "nowrap",
           }}>
-            <span className="nav-cta-short" style={{ display: "none" }}>Télécharger</span>
-            <span className="nav-cta-full">Télécharger l&apos;app</span>
+            Télécharger
           </Link>
 
           {/* Burger */}
@@ -94,7 +93,7 @@ function NavBar() {
           className="nav-mobile-menu"
           style={{ borderTop: "1px solid rgba(61,74,61,0.25)", backgroundColor: "#101415" }}
         >
-          <ul style={{
+          <ul className="nav-mobile-list" style={{
             maxWidth: 1280, margin: "0 auto",
             padding: "12px 24px",
             display: "flex", flexDirection: "column", gap: 4,
@@ -107,7 +106,7 @@ function NavBar() {
                   onClick={() => setOpen(false)}
                   style={{
                     display: "block", borderRadius: 8,
-                    padding: "10px 12px",
+                      padding: "8px 12px",
                     color: "rgba(188,203,185,0.85)", fontSize: 15, fontWeight: 500,
                   }}
                 >

@@ -13,7 +13,7 @@ interface FooterProps {
 export default function Footer({ sections, tagline }: FooterProps) {
   return (
     <footer style={{ backgroundColor: "#0b0f10", borderTop: "1px solid rgba(61,74,61,0.2)" }}>
-      <div style={{
+      <div className="footer-grid" style={{
         maxWidth: 1280, margin: "0 auto", padding: "48px 24px",
         display: "grid",
         gridTemplateColumns: `220px ${sections.map(() => "1fr").join(" ")}`,

@@ -80,25 +80,25 @@ export default function HomePage() {
           {/* overlay */}
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(16,20,21,0.55) 0%, rgba(16,20,21,0.75) 60%, #101415 100%)" }} />
 
-          <div style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", padding: "0 24px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+          <div className="page-container hero-shell" style={{ position: "relative", zIndex: 2, maxWidth: 1280, margin: "0 auto", padding: "0 24px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 14px", borderRadius: 9999, border: "1px solid rgba(75,226,119,0.45)", color: "#4be277", fontSize: 12, fontWeight: 600, letterSpacing: "0.07em", marginBottom: 24, width: "fit-content", margin: "0 auto 24px" }}>
               <span className="material-symbols-outlined" style={{ fontSize: 15 }}>location_on</span>
               La Révolution de la Mobilité à Conakry
             </span>
-            <h1 style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.025em", marginBottom: 24, color: "#fff", maxWidth: 900 }}>
+            <h1 className="hero-title" style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.025em", marginBottom: 24, color: "#fff", maxWidth: 900 }}>
             Jambo : une mobilité inclusive et fiable à Conakry.
             </h1>
-            <p style={{ fontSize: 18, lineHeight: 1.65, color: "rgba(255,255,255,0.8)", marginBottom: 40, maxWidth: 620 }}>
+            <p className="hero-copy" style={{ fontSize: 18, lineHeight: 1.65, color: "rgba(255,255,255,0.8)", marginBottom: 40, maxWidth: 620 }}>
               Jambo by CityTaxi — des trajets sûrs, accessibles et rapides au cœur de Conakry. Téléchargez l&apos;application et bougez librement.
             </p>
 
             {/* CTA store badges */}
-            <div id="telecharger" style={{ display: "flex", gap: 16, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
+            <div id="download" className="button-row" style={{ display: "flex", gap: 16, alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
               <a href="#" style={{ display: "block" }}>
-                <Image src="/images/app-store-fr.svg" alt="Télécharger sur l'App Store" width={160} height={48} style={{ objectFit: "contain" }} />
+                <Image src="/images/app-store-fr.svg" alt="Télécharger sur l'App Store" width={160} height={48} style={{ objectFit: "contain", width: "auto", height: "auto" }} />
               </a>
               <a href="#" style={{ display: "block" }}>
-                <Image src="/images/google-play-fr.png" alt="Disponible sur Google Play" width={180} height={54} style={{ objectFit: "contain" }} />
+                <Image src="/images/google-play-fr.png" alt="Disponible sur Google Play" width={180} height={54} style={{ objectFit: "contain", width: "auto", height: "auto" }} />
               </a>
             </div>
           </div>
@@ -110,9 +110,9 @@ export default function HomePage() {
 
         {/* ── La flotte réelle ── */}
         <section style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 80px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="feature-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             <div style={{ borderRadius: 16, overflow: "hidden", position: "relative", minHeight: 420 }}>
-              <Image src="/images/vehicules.jpg" alt="Flotte CityTaxi" fill style={{ objectFit: "cover" }} />
+              <Image src="/images/vehicules.jpg" alt="Flotte CityTaxi" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.85) 0%, transparent 50%)" }} />
               <div style={{ position: "absolute", bottom: 24, left: 24 }}>
                 <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 4 }}>Flotte CityTaxi</div>
@@ -120,7 +120,7 @@ export default function HomePage() {
               </div>
             </div>
             <div style={{ borderRadius: 16, overflow: "hidden", position: "relative", minHeight: 420 }}>
-              <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill style={{ objectFit: "cover" }} />
+              <Image src="/images/e-vehicules.jpg" alt="Véhicules électriques" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(16,20,21,0.85) 0%, transparent 50%)" }} />
               <div style={{ position: "absolute", bottom: 24, left: 24 }}>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "3px 10px", borderRadius: 9999, backgroundColor: "rgba(75,226,119,0.2)", color: "#4be277", fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
@@ -135,7 +135,7 @@ export default function HomePage() {
 
         {/* ── KPIs ── */}
         <section style={{ backgroundColor: "#0b0f10", padding: "64px 24px" }}>
-          <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
+          <div className="stats-grid" style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
             {[
               { icon: "directions_car", value: "1 500+", label: "Courses par jour" },
               { icon: "star", value: "4,9/5", label: "Note moyenne" },
@@ -158,7 +158,7 @@ export default function HomePage() {
             <h2 style={{ fontSize: 36, fontWeight: 800, color: "#e0e3e5", letterSpacing: "-0.02em", marginBottom: 8 }}>Comment ça marche&nbsp;?</h2>
             <p style={{ fontSize: 16, color: "#bccbb9" }}>Trois étapes simples pour démarrer.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, position: "relative" }}>
+          <div className="three-col-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, position: "relative" }}>
             {/* connector line */}
             <div style={{ position: "absolute", top: 52, left: "16.66%", right: "16.66%", height: 1, background: "linear-gradient(to right, #4be277, rgba(75,226,119,0.2), #4be277)", zIndex: 0 }} />
             {STEPS.map((s, i) => (
@@ -177,8 +177,8 @@ export default function HomePage() {
 
           {/* Download CTA below steps */}
           {/* <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 48, flexWrap: "wrap" }}>
-            <a href="#"><Image src="/images/app-store-fr.svg" alt="App Store" width={160} height={48} style={{ objectFit: "contain" }} /></a>
-            <a href="#"><Image src="/images/google-play-fr.png" alt="Google Play" width={180} height={54} style={{ objectFit: "contain" }} /></a>
+            <a href="#"><Image src="/images/app-store-fr.svg" alt="App Store" width={160} height={48} style={{ objectFit: "contain", width: "auto", height: "auto" }} /></a>
+            <a href="#"><Image src="/images/google-play-fr.png" alt="Google Play" width={180} height={54} style={{ objectFit: "contain", width: "auto", height: "auto" }} /></a>
           </div> */}
         </section>
 
@@ -188,10 +188,10 @@ export default function HomePage() {
         <section style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px 96px" }}>
           <h2 style={{ fontSize: 32, fontWeight: 700, textAlign: "center", marginBottom: 8, color: "#e0e3e5" }}>Pourquoi choisir Jambo&nbsp;?</h2>
           <p style={{ fontSize: 16, color: "#bccbb9", textAlign: "center", marginBottom: 48 }}>L&apos;avenir du transport urbain à Conakry est là.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="feature-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             <div style={{ ...G, padding: 32, position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", inset: 0 }}>
-                <Image src="/images/vehicules.jpg" alt="" fill style={{ objectFit: "cover", opacity: 0.12 }} />
+                <Image src="/images/vehicules.jpg" alt="" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.12 }} />
               </div>
               <div style={{ position: "relative" }}>
                 <span className="material-symbols-outlined" style={{ fontSize: 28, color: "#4be277", display: "block", marginBottom: 12 }}>security</span>
@@ -232,7 +232,7 @@ export default function HomePage() {
               <h2 style={{ fontSize: 36, fontWeight: 800, color: "#e0e3e5", letterSpacing: "-0.02em", marginBottom: 8 }}>Étudiants, chauffeurs et professionnels</h2>
               <p style={{ fontSize: 16, color: "#bccbb9" }}>Des résidents de Conakry partagent leurs expériences.</p>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            <div className="three-col-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
               {TESTIMONIALS.map((t) => (
                 <div key={t.name} style={{ background: "rgba(30,41,59,0.85)", backdropFilter: "blur(12px)", border: "1px solid rgba(51,65,85,0.55)", borderRadius: 12, padding: 36, display: "flex", flexDirection: "column", gap: 24, position: "relative" }}>
                   {/* quote mark */}
@@ -268,8 +268,8 @@ export default function HomePage() {
             <h2 style={{ fontSize: 30, fontWeight: 700, color: "#003915", marginBottom: 12 }}>Prêt à rejoindre la révolution de la mobilité&nbsp;?</h2>
             <p style={{ fontSize: 16, color: "#004b1e", maxWidth: 480, margin: "0 auto 36px" }}> Des milliers de conakrykas font déjà confiance à Jambo chaque jour. Rejoignez-les.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: 20, flexWrap: "wrap" }}>
-              <a href="#"><Image src="/images/app-store-fr.svg" alt="App Store" width={160} height={48} style={{ objectFit: "contain" }} /></a>
-              <a href="#"><Image src="/images/google-play-fr.png" alt="Google Play" width={160} height={48} style={{ objectFit: "contain" }} /></a>
+              <a href="#"><Image src="/images/app-store-fr.svg" alt="App Store" width={160} height={48} style={{ objectFit: "contain", width: "auto", height: "auto" }} /></a>
+              <a href="#"><Image src="/images/google-play-fr.png" alt="Google Play" width={160} height={48} style={{ objectFit: "contain", width: "auto", height: "auto" }} /></a>
             </div>
           </section>
 </div>
@@ -327,7 +327,7 @@ export default function HomePage() {
       </p>
     </div>
 
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", maxWidth: "1100px", margin: "0 auto" }}>
+    <div className="download-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", maxWidth: "1100px", margin: "0 auto" }}>
       {apps.map((a) => (
         <div
           key={a.title}
@@ -366,25 +366,27 @@ export default function HomePage() {
               alt={a.alt}
               width={192}
               height={192}
-              style={{ borderRadius: "8px" }}
+              style={{ borderRadius: "8px", width: "auto", height: "auto" }}
             />
           </div>
 
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
             <a href={a.appStoreUrl} target="_blank" rel="noopener noreferrer">
-              <Image
+                <Image
                 src="/images/app-store-fr.svg"
                 alt="App Store"
                 width={135}
                 height={40}
+                style={{ width: "auto", height: "auto" }}
               />
             </a>
             <a href={a.playStoreUrl} target="_blank" rel="noopener noreferrer">
-              <Image
+                <Image
                 src="/images/google-play-fr.png"
                 alt="Google Play"
                 width={135}
                 height={40}
+                style={{ width: "auto", height: "auto" }}
               />
             </a>
           </div>
@@ -395,7 +397,7 @@ export default function HomePage() {
 </section>
         {/* ── Contact ── */}
         <section id="contact" style={{ maxWidth: 1280, margin: "0 auto", padding: "96px 24px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
 
             {/* Left info */}
             <div>
@@ -430,7 +432,7 @@ export default function HomePage() {
               <h3 style={{ fontSize: 20, fontWeight: 700, color: "#e0e3e5", marginBottom: 6 }}>Envoyez-nous un message</h3>
               <p style={{ fontSize: 14, color: "#bccbb9", marginBottom: 28 }}>Notre équipe vous répondra dans les 24 heures.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                <div className="contact-name-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                   <div>
                     <label style={{ display: "block", fontSize: 13, fontWeight: 500, color: "#bccbb9", marginBottom: 6 }}>Prénom</label>
                     <input type="text" placeholder="Amadou" style={{ width: "100%", background: "#1d2022", border: "1px solid rgba(61,74,61,0.5)", color: "#e0e3e5", borderRadius: 8, padding: "10px 14px", fontSize: 14, outline: "none", fontFamily: "Inter, sans-serif", boxSizing: "border-box" }} />
